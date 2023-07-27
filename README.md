@@ -2,6 +2,6 @@
 
 # compilação:
 para compilar execute:
-'''shell
+```shell
 make install
-'''
+```
