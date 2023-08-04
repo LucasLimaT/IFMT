@@ -1,3 +1,4 @@
+
 ponteiro: clear
 	@echo "========================================="
 	@echo "		AJUDA		"
@@ -33,4 +34,4 @@ help:
 	@echo "==================="
 	@echo "help 	|ajuda"
 	@echo "ola  	|executa mensagem de teste"
-	@echo "clean	|apaga códigos compilados"
+	@echo "clear	|apaga códigos compilados"
