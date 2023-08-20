@@ -14,6 +14,7 @@ void init(LinkedList *list) {
 }
 
 bool isEmpty(LinkedList *list) {
+    log_info("Verificando se a lista está vazia");
     log_trace("isEmpty ->")
     if(list == NULL) {
         log_error("Deu erro, você quer adicionar algo em algo que não existe!");
@@ -27,9 +28,35 @@ bool isEmpty(LinkedList *list) {
 
 int enqueue(LinkedList *list, void *data) {
     log_info("Adicionando em fila na lista");
+    log_trace("enqueue ->");
     Node *no = (Node *)malloc(sizeof(Node));
-    log_debug()
-    
+    if (no == NULL) {
+        log_debug("no: %p", no);
+        log_error("Memoria insuficiente para operação!");
+        log_trace("enqueue <-");
+        return 0;
+    } else {
+        no->data = data;
+        no->next = NULL;
+    }    
+    if (isEmpty(list)) {
+        list->first = no;
+    } else {
+        Node *aux = list->first;
+        log_debug("(aux, aux->next): (%p, %p)", aux, aux->next);
+        while(aux->next != NULL) {
+            aux = aux->next;
+            log_debug("(aux, aux->next): (%p, %p)", aux, aux->next);
+        }
+        aux->next = no;
+        log_debug("(aux, aux->next): (%p, %p)", aux, aux->next);
+    }
+    log_debug("(aux, aux->next): (%p, %p)", aux, aux->next);
+    list->size += 1;        
+    log_debug("no(data, next): %p(%p, %p)", no, no->data, no->next);
+    log_info("Dado inserido com sucesso!");
+    log_trace("enqueue <-");
+    return 1;
 }
 
 void* dequeue(LinkedList *list) {
