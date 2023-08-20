@@ -15,11 +15,11 @@ ola: clear
 	@echo "		AJUDA		"
 	@echo "========================================="
 	@echo "Compilando o programa olamundo"
-	gcc olamundo.c -o ola
+	@gcc olamundo.c -o ola
 	@echo "Tornando o programa olamundo executável"
-	chmod +x ola
+	@chmod +x ola
 	@echo "Execuando o programa olamundo executável"
-	./ola
+	@./ola
 	@echo "========================================="
 clear:
 	@echo "========================================="
