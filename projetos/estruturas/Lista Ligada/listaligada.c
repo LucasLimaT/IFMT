@@ -60,15 +60,47 @@ int enqueue(LinkedList *list, void *data) {
 }
 
 void* dequeue(LinkedList *list) {
-
+    log_info("Retirando valor da fila");
+    log_trace("dequeue ->");
+    if(isEmpty(list)) {
+        log_error("A lista está vazia");
+        log_trace("dequeue <-");
+        return (NULL);
+    } else {
+        Node *aux = (Node *)malloc(sizeof(Node));
+        log_debug("(list->first->data, list->first->next), (%p, %p)", list->first->data, list->first->next);
+        list->first->data = NULL;
+        list->size -= 1;
+        while(list->first->next != NULL) {
+            aux = list->first;
+            log_debug("aux(aux->data, aux->next), %p(%p, %p)", aux, aux->data, aux->next);
+            list->first->data = aux->data;
+            list->first->next = aux->next;
+            log_debug("list=>first(list->first->data, list->first->next), %p(%p, %p)", list->first, list->first->data, list->first->next);
+            if(aux->first->next == NULL) {
+                list->first->next = NULL;
+                return list->first->data
+            }
+        }
+        log_trace("dequeue <-");
+    }
 }
 
 void* first(LinkedList *list) {
-
+    log_info("Pegando primeiro nó da lista");
+    log_trace("first ->");
+    if (isEmpty(list)) {
+        log_warn("A lista está vazia");
+        log_trace("first <-");
+        return NULL;
+    } 
+    log_debug("list->first: %p", list->first);
+    log_trace("first <-");
+    return list->first;
 }
 
 void* last(LinkedList *list) {
-
+    
 }
 
 int push(LinkedList *list, void *data) {
