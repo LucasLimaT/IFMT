@@ -100,11 +100,25 @@ void* first(LinkedList *list) {
 }
 
 void* last(LinkedList *list) {
-    
+    log_info("Pegando ultimo nó da lista");
+    log_trace("last ->");
+    if (isEmpty(list)) {
+        log_warn("A lista está vazia");
+        log_trace("last <-");
+        return NULL;
+    }
+    Node *aux = list->first;
+    log_debug("aux(aux->next, aux->data): %p(%p, %p)", aux, aux->next, aux->data);
+    while(aux->next != NULL) {
+        aux = aux->next;
+        log_debug("aux(aux->next, aux->data): %p(%p, %p)", aux, aux->next, aux->data);
+    }
+    log_trace("last <-");
+    return aux->data;
 }
 
 int push(LinkedList *list, void *data) {
-
+    
 }
 
 void* pop(LinkedList *list) {
