@@ -118,42 +118,50 @@ void* last(LinkedList *list) {
 }
 
 int push(LinkedList *list, void *data) {
-    
+    log_info("Insere na pilha");
 }
 
 void* pop(LinkedList *list) {
-
+    log_info("Removendo o topo da pilha");
+    log_trace("pop ->");
+    Node *data = dequeue(list);
+    log_trace("pop <-");
+    return data;
 }
 
 void* top(LinkedList *list) {
-
+    log_info("Consultando o topo da pilha");
+    log_trace("top ->");
+    Node *data = first(list);
+    log_trace("top <-");
+    return data;
 }
 
 
 int indexOf(LinkedList *list, void *data, compare equal) {
-
+    
 }
 
 void* getPos(LinkedList *list, int pos) {
-
+    return NULL;
 }
 
 Node* getNodeByPos(LinkedList *list, int pos) {
-
+    return NULL;
 }
 
 int add(LinkedList *list, int pos, void *data) {
-
+    return 0;
 }
 
 int addAll(LinkedList *listDest, int pos, LinkedList *listSource) {
-
+    return 0;
 }
 
 void* removePos(LinkedList *list, int pos) {
-
+    return NULL;
 }
 
 bool removeData(LinkedList *list, void *data, compare equal) {
-
-}
+    return false;
+}                                        
