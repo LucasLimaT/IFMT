@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "LinkedList.h"
+#include "listaligada.h"
 #include "log.h"
 
 bool compara(void *data1, void *data2) {
@@ -29,7 +29,7 @@ int main() {
 	*numero = 30;
 	enqueue(&lista, numero);	
 
-    printf("indexOf(30): %d\n",indexOf(&lista,numero,compara));
+    //printf("indexOf(30): %d\n",indexOf(&lista,numero,compara));
 
 	numero = (int*)dequeue(&lista);
 	printf("%d removido\n", *numero);

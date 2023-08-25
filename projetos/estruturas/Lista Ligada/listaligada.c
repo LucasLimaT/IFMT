@@ -15,7 +15,7 @@ void init(LinkedList *list) {
 
 bool isEmpty(LinkedList *list) {
     log_info("Verificando se a lista está vazia");
-    log_trace("isEmpty ->")
+    log_trace("isEmpty ->");
     if(list == NULL) {
         log_error("Deu erro, você quer adicionar algo em algo que não existe!");
         log_debug("list: %p", list);
@@ -51,7 +51,6 @@ int enqueue(LinkedList *list, void *data) {
         aux->next = no;
         log_debug("(aux, aux->next): (%p, %p)", aux, aux->next);
     }
-    log_debug("(aux, aux->next): (%p, %p)", aux, aux->next);
     list->size += 1;        
     log_debug("no(data, next): %p(%p, %p)", no, no->data, no->next);
     log_info("Dado inserido com sucesso!");
@@ -67,22 +66,14 @@ void* dequeue(LinkedList *list) {
         log_trace("dequeue <-");
         return (NULL);
     } else {
-        Node *aux = (Node *)malloc(sizeof(Node));
+        Node *aux = list->first;
         log_debug("(list->first->data, list->first->next), (%p, %p)", list->first->data, list->first->next);
-        list->first->data = NULL;
+        list->first = list->first->next;
         list->size -= 1;
-        while(list->first->next != NULL) {
-            aux = list->first;
-            log_debug("aux(aux->data, aux->next), %p(%p, %p)", aux, aux->data, aux->next);
-            list->first->data = aux->data;
-            list->first->next = aux->next;
-            log_debug("list=>first(list->first->data, list->first->next), %p(%p, %p)", list->first, list->first->data, list->first->next);
-            if(aux->first->next == NULL) {
-                list->first->next = NULL;
-                return list->first->data
-            }
-        }
         log_trace("dequeue <-");
+        void *data = aux->data;
+        free(aux);
+        return data;
     }
 }
 
@@ -138,9 +129,9 @@ void* top(LinkedList *list) {
 }
 
 
-int indexOf(LinkedList *list, void *data, compare equal) {
+/*int indexOf(LinkedList *list, void *data, compare equal) {
     
-}
+}*/
 
 void* getPos(LinkedList *list, int pos) {
     return NULL;

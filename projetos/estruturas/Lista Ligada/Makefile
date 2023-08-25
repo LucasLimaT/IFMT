@@ -3,7 +3,7 @@ listaligada: clear
 	@echo "		AJUDA		"
 	@echo "========================================="
 	@echo "Compilando a lista ligada"
-	@gcc main.c listaligada.c listaligada.h -o listaligada
+	@gcc main.c listaligada.c log.c -o listaligada
 	@echo "Tornando o programa olamundo executável"
 	@chmod +x listaligada
 	@echo "Execuando o programa olamundo executável"
