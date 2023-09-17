@@ -3,11 +3,11 @@ Doublelist: clear
 	@echo "		AJUDA		"
 	@echo "========================================="
 	@echo "Compilando a lista duplamente ligada"
-	@gcc Doublelist/main.c Doublelist/doublelist.c Doublelist/log.c -o ListaDupla
+	@gcc DoubleList/main.c DoubleList/doublelist.c DoubleList/log.c -o ListaDupla
 	@echo "Tornando a Lista Dupla executável"
 	@chmod +x ListaDupla
 	@echo "Execuando a Lista Dupla executável"
-	@./Doublelist/ListaDupla
+	@./ListaDupla
 	@echo "========================================="
 clear:
 	@echo "========================================="
