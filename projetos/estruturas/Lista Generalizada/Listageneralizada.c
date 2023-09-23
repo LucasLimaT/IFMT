@@ -22,7 +22,12 @@ int addAtom(Node **list, int atom) {
 }
 
 int addList(Node **list, Node **subList) {
-    
+    log_info("Adicionando lista");
+    log_trace("addList <-");
+    Node *No = (Node *)malloc(sizeof(Node));
+    No->atomList.Node = No;
+    No->type = 1;
+
 }
 
 void show(Node *list) {
