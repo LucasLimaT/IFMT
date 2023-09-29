@@ -1,3 +1,14 @@
+Listageneralizada: clear
+	@echo "========================================="
+	@echo "		AJUDA		"
+	@echo "========================================="
+	@echo "Compilando a lista generalizada"
+	@gcc "Lista Generalizada"/main.c "Lista Generalizada"/Listageneralizada.c "Lista Generalizada"/log.c -o Listageneralizada
+	@echo "Tornando a Lista generalizada"
+	@chmod +x Listageneralizada
+	@echo "Execuando a Lista generalizada"
+	@./Listageneralizada
+	@echo "========================================="
 Doublelist: clear
 	@echo "========================================="
 	@echo "		AJUDA		"
