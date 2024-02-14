@@ -27,4 +27,9 @@ class Cliente{
             return false;
         }
     }
+
+    String recuperaDadosParaImpressao(){
+        return "Titular: " + titular + "\nAgencia: " + agencia + "\nData de abertura: "
+        + data_de_abertura + "\nNumero: " + numero + "\nSaldo: " + saldo;
+    }
 }

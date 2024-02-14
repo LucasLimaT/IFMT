@@ -13,5 +13,6 @@ public class Main{
 		cliente1.deposito(cliente1, depositado);
 		cliente1.saque(cliente1, sacado);
 		cliente1.rendimento(cliente1);
+		System.out.println("\n" + cliente1.recuperaDadosParaImpressao());
 	}
 }
