@@ -1,7 +1,7 @@
 class Cliente{
     String titular;
     String agencia;
-    String data_de_abertura;
+    Data data_de_abertura;
     int numero;
     double saldo;
 
@@ -30,6 +30,6 @@ class Cliente{
 
     String recuperaDadosParaImpressao(){
         return "Titular: " + titular + "\nAgencia: " + agencia + "\nData de abertura: "
-        + data_de_abertura + "\nNumero: " + numero + "\nSaldo: " + saldo;
+        + data_de_abertura.formatada() + "\nNumero: " + numero + "\nSaldo: " + saldo;
     }
 }

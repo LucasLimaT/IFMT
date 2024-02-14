@@ -6,7 +6,11 @@ public class Main{
 
 		cliente1.titular = "Robson";
 		cliente1.agencia = "123";
-		cliente1.data_de_abertura = "13/02/2024";
+		Data data = new Data();
+		data.dia = 13;
+		data.mes = 02;
+		data.ano = 2023;
+		cliente1.data_de_abertura = data;
 		cliente1.numero = 01;
 		cliente1.saldo = 0;
 
