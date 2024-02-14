@@ -10,6 +10,15 @@ public class Main{
 		cliente1.numero = 01;
 		cliente1.saldo = 0;
 
+		Cliente cliente2 = new Cliente();
+		cliente2 = cliente1;
+
+		if(cliente1 == cliente2) {
+			System.out.println("Sao iguais");
+		}	else {
+			System.out.println("Sao diferentes");
+		}
+
 		cliente1.deposito(cliente1, depositado);
 		cliente1.saque(cliente1, sacado);
 		cliente1.rendimento(cliente1);
